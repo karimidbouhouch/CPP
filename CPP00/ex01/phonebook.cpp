@@ -6,28 +6,11 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 15:46:50 by kid-bouh          #+#    #+#             */
-/*   Updated: 2022/09/02 22:45:18 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2022/09/03 15:11:31 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-#include <cstring>
-
-class Contact
-{
-	public :
-		std::string firstname;
-		std::string lastname;
-		std::string nickname;
-		std::string phonenumber;
-		std::string darkestsecre;
-};
-
-class PhoneBook{
-	public :
-		Contact contact[8];
-};
+#include "phonebook.hpp"
 
 int ft_strlen(std::string str)
 {
@@ -100,7 +83,7 @@ int main()
 			i++;
 			text = "";
 		}
-		else if (text == "SEARCH")
+		if (text == "SEARCH")
 		{
 			std::cout << "--------- SEARCH CONTACT ---------" << std::endl;
 			std::cout << "Enter index of contact : ";
