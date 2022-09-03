@@ -46,9 +46,11 @@ int main()
 	int index;
 	int i;
 	int j;
+	int tmp;
 
 	j = 0;
 	i = 0;
+	tmp = 0;
 	while (text != "EXIT")
 	{
 		std::getline(std::cin, text);
@@ -65,7 +67,7 @@ int main()
 				std::cout << "first name is required\n" << "-> first name : " ;
 				std::getline(std::cin, phone.contact[i].firstname);
 			}
-				
+
 			std::cout << "-> last name : ";
 			std::getline(std::cin, phone.contact[i].lastname);
 			while(phone.contact[i].lastname == "")
@@ -104,12 +106,13 @@ int main()
 			std::cout << "Enter index of contact : ";
 			std::cin >> index;
 			index--;
-			if (index >= 0 && index <= i)
+			if (i > tmp)
+				tmp = i ;
+			if (index >= 0 && index < tmp)
 			{
 				std::cout << "-----------------------------------------------" << std::endl;
 				std::cout << "index      |first name |last name  |nickname   " << std::endl;
 				std::cout << "-----------------------------------------------" << std::endl;
-
 				std::cout << index + 1 << "          |" ;
 				if (ft_strlen(phone.contact[index].firstname) > 10)
 					std::cout << (phone.contact[index].firstname).substr(0,10) + '.' << "|" ;
@@ -138,7 +141,7 @@ int main()
 					std::cout << "|";
 				}
 				if (ft_strlen(phone.contact[index].nickname) > 10)
-					std::cout << (phone.contact[index].nickname).substr(0,10) + '.' ;
+					std::cout << (phone.contact[index].nickname).substr(0,10) + '.' << std::endl ;
 				else
 				{
 					std::cout << (phone.contact[index].nickname).substr(0,10);
@@ -156,6 +159,5 @@ int main()
 			text = "";
 		}
 	}
-
 	return 0;
 }
