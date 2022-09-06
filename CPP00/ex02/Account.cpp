@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kid-bouh <kid-bouh@student .42.fr>          +#+  +:+       +#+        */
+/*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 19:02:22 by kid-bouh          #+#    #+#             */
-/*   Updated: 2022/09/04 22:49:04 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2022/09/06 21:20:00 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,15 +90,10 @@ void Account::makeDeposit(int deposit)
 	Account::_totalAmount += deposit;
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex
-			  << ";p_amount"<< p_amount
+			  << ";p_amount:"<< p_amount
 			  << ";deposit:"<< deposit
 			  << ";amount:"<< _amount
 			  << ";nb_deposits:" << _nbDeposits << std::endl;
-}
-
-int Account::checkAmount( void ) const
-{
-
 }
 
 bool Account::makeWithdrawal(int withdrawal)
@@ -134,4 +129,9 @@ void	Account::_displayTimestamp( void )
 			<< std::setw(2) << ltm->tm_hour
 			<< std::setw(2) << ltm->tm_min
 			<< std::setw(2) << ltm->tm_sec << "] ";
+}
+
+int Account::checkAmount( void ) const
+{
+	return 0;
 }
