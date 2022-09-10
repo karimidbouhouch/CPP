@@ -5,25 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 01:33:04 by kid-bouh          #+#    #+#             */
-/*   Updated: 2022/09/10 21:04:22 by kid-bouh         ###   ########.fr       */
+/*   Created: 2022/09/10 22:23:02 by kid-bouh          #+#    #+#             */
+/*   Updated: 2022/09/10 23:14:51 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include <iostream>
 
 int main()
 {
-	Zombie *zombies;
-	int N = 9;
-	std::string name = "hola";
-	int i = 0;
+	std::string brain = "HI THIS IS BRAIN";
+	std::string *stringPTR = &brain;
+	std::string &stringREF = brain;
 
-	zombies = zombieHorde(N, name);
-	while (i < N)
-	{
-		zombies[i].announce();
-		i++;
-	}
-	delete [] zombies ;
+	std::cout << "brain address \t\t: " << &brain << std::endl;
+	std::cout << "stringPTR address \t: " << stringPTR << std::endl;
+	std::cout << "stringREF address \t: " << &stringREF << std::endl;
+
+	std::cout << "brain value \t\t: " << brain << std::endl;
+	std::cout << "stringPTR value \t: " << *stringPTR << std::endl;
+	std::cout << "stringREF value \t: " << stringREF << std::endl;
 }

@@ -1,14 +1,10 @@
-NAME 	= hordeofZombies
+NAME 	= BRAIN
 FLAGS 	= -Wall -Wextra -Werror
 SRC		= 	main.cpp\
-			Zombie.cpp\
-			zombieHorde.cpp\
 
 OBJ 	= $(SRC:%.cpp=%.o)
 
-INC 	= Zombie.hpp
-
-all 	: $(NAME) $(INC)
+all 	: $(NAME) 
 $(NAME) : $(OBJ)
 		c++ -std=c++98 $(FLAGS) $(OBJ) -o $(NAME)
 clean 	:
