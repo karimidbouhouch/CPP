@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 19:49:41 by kid-bouh          #+#    #+#             */
-/*   Updated: 2022/09/07 21:25:10 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2022/09/10 01:28:08 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void randomChump( std::string name )
 {
-	
+	Zombie newZombie(name);
+	newZombie.announce();
 }
