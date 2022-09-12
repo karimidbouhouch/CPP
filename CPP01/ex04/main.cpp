@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 19:45:31 by kid-bouh          #+#    #+#             */
-/*   Updated: 2022/09/12 01:41:04 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2022/09/12 23:51:19 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main(int ac, char **av)
 		s2 = av[3];
 
 		file2.open(filename);
-		if(file2.is_open())
+		if (file2.is_open())
 		{
 			file1.open(filename+".replace");
 			while (std::getline(file2, text))
@@ -46,8 +46,12 @@ int main(int ac, char **av)
 			file1.close();
 			file2.close();
 		}
+		else
+		{
+			std::cout << "error : file not found" << std::endl;
+		}
 
 	}
 	else 
-		std::cout << "error\n";
+		std::cout << "error in args \n";
 }
