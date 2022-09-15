@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/13 15:52:24 by kid-bouh          #+#    #+#             */
-/*   Updated: 2022/09/14 21:38:28 by kid-bouh         ###   ########.fr       */
+/*   Created: 2022/09/14 22:21:36 by kid-bouh          #+#    #+#             */
+/*   Updated: 2022/09/14 22:23:03 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef HARL_HPP
+#define HARL_HPP
 
-int main() {
+#include <iostream>
 
-	Harl h;
-	
-	h.complain("Warning");
-	h.complain("Error");
-	h.complain("Info");
-	h.complain("Debug");
-}
+class Harl
+{
+	private:
+		void	debug( void );
+		void	info( void );
+		void	warning( void );
+		void	error( void );
+	public:
+		void	complain( std::string level );
+};
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 15:54:39 by kid-bouh          #+#    #+#             */
-/*   Updated: 2022/09/14 02:08:00 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2022/09/14 20:40:25 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ class Harl
 	public:
 		void	complain( std::string level );
 };
-
 
 #endif

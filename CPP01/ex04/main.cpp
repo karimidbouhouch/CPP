@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 19:45:31 by kid-bouh          #+#    #+#             */
-/*   Updated: 2022/09/13 23:54:24 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2022/09/15 00:54:59 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(int ac, char **av)
 					{
 						text.erase(pos, s1.length());
 						text.insert(pos, s2);
-						pos += 1;
+						pos += s1.length();
 					}
 					file1 << text;
 					if (!file2.eof())
