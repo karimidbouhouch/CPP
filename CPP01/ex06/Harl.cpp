@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 22:18:50 by kid-bouh          #+#    #+#             */
-/*   Updated: 2022/09/15 00:49:59 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2022/09/15 15:30:32 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,30 @@
 
 void Harl::debug()
 {
-	std::cout << "Error type : DEBUG" << std::endl;
+	std::cout << "Error type : [DEBUG]" << std::endl;
 }
 
 void Harl::info()
 {
-	std::cout << "Error type : INFO" << std::endl;
+	std::cout << "Error type : [INFO]" << std::endl;
 }
 
 void Harl::warning()
 {
-	std::cout << "Error type : WARNING" << std::endl;
+	std::cout << "Error type : [WARNING]" << std::endl;
 }
 
 void Harl::error()
 {
-	std::cout << "Error type : ERROR" << std::endl;
+	std::cout << "Error type : [ERROR]" << std::endl;
 }
 
 void Harl::complain(std::string level)
 {
-	int i = 0;
 	
 	std::string tab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
+	int i = 0;
 	while (i < 4)
 	{
 		if (tab[i] == level)
@@ -49,15 +49,18 @@ void Harl::complain(std::string level)
 	{
 		case 0:
 			Harl::debug();
-			break;
+			i++;
 		case 1:
 			Harl::info();
-			break;
+			i++;
 		case 2:
 			Harl::warning();
-			break;
+			i++;
 		case 3:
 			Harl::error();
+			break;
+		case 4:
+			std::cout << "[NONE]" << std::endl;
 			break;
 	}
 }

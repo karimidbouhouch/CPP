@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 15:52:45 by kid-bouh          #+#    #+#             */
-/*   Updated: 2022/09/14 21:42:00 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2022/09/15 15:30:51 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 void Harl::debug()
 {
-	std::cout << "Error type : Debug" << std::endl;
+	std::cout << "Error type : [DEBUG]" << std::endl;
 }
 
 void Harl::info()
 {
-	std::cout << "Error type : Info" << std::endl;
+	std::cout << "Error type : [INFO]" << std::endl;
 }
 
 void Harl::warning()
 {
-	std::cout << "Error type : Warning" << std::endl;
+	std::cout << "Error type : [WARNING]" << std::endl;
 }
 
 void Harl::error()
 {
-	std::cout << "Error type : Error" << std::endl;
+	std::cout << "Error type : [ERROR]" << std::endl;
 }
 
 void Harl::complain(std::string level)
