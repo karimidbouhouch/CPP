@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 15:54:43 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/04 23:08:15 by kid-bouh         ###   ########.fr       */
+/*   Created: 2023/01/04 23:48:28 by kid-bouh          #+#    #+#             */
+/*   Updated: 2023/01/05 00:52:20 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main()
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20)
 {
-	ClapTrap claptrap1("hero1");
-	ClapTrap claptrap2("hero2");
-	ClapTrap claptrap3(claptrap2);
-
-	claptrap1.attack("enemy");
-	claptrap1.beRepaired(6);
-	claptrap1.takeDamage(8);
-
-	claptrap3.attack("enemy");
-	claptrap3.takeDamage(8);
-	claptrap3.beRepaired(15);
+	std::cout << "ScavTrap Name constructor called" << std::endl;
 }
+

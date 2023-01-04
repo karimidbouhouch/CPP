@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 15:55:27 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/04 23:08:16 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/05 00:51:12 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,3 +84,12 @@ void ClapTrap::beRepaired(unsigned int amount)
 		Energy_points -= 1;
 	}
 }
+
+ClapTrap::ClapTrap(std::string name, unsigned int Hit_points, unsigned int Energy_points, unsigned int Attack_damage)
+{
+	this->name = name;
+	this->Hit_points = Hit_points;
+	this->Energy_points = Energy_points;
+	this->Attack_damage = Attack_damage;
+}
+

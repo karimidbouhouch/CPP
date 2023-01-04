@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/03 15:54:43 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/04 23:08:15 by kid-bouh         ###   ########.fr       */
+/*   Created: 2023/01/04 23:48:17 by kid-bouh          #+#    #+#             */
+/*   Updated: 2023/01/05 00:52:44 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
+#include <iostream>
 #include "ClapTrap.hpp"
 
-int main()
-{
-	ClapTrap claptrap1("hero1");
-	ClapTrap claptrap2("hero2");
-	ClapTrap claptrap3(claptrap2);
-
-	claptrap1.attack("enemy");
-	claptrap1.beRepaired(6);
-	claptrap1.takeDamage(8);
-
-	claptrap3.attack("enemy");
-	claptrap3.takeDamage(8);
-	claptrap3.beRepaired(15);
+class ScavTrap : public ClapTrap {
+	public:
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap&);
+		ScavTrap& operator = (const ScavTrap&);
+		~ScavTrap();
+		void guardGate();
 }
+
+#endif 
