@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 22:52:29 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/05 23:55:45 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/06 19:46:21 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
 	public:
+		FragTrap();
 		FragTrap(std::string name);
+		FragTrap(const FragTrap& frag);
 		FragTrap& operator = (const FragTrap& obj);
 		~FragTrap();
 		void highFivesGuys(void);
