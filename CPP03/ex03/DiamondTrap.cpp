@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/04 23:48:17 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/05 21:57:18 by kid-bouh         ###   ########.fr       */
+/*   Created: 2023/01/06 00:49:11 by kid-bouh          #+#    #+#             */
+/*   Updated: 2023/01/06 01:48:49 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#include "DiamondTrap.hpp"
 
-#include <iostream>
-#include "ClapTrap.hpp"
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name)
+{
+	std::cout << "DiamondTrap Constructor called" << std::endl;
+	// DiamondTrap::Hit_points = FragTrap::Hit_points;
+	// DiamondTrap::Energy_points = ScavTrap::Energy_points;
+	// DiamondTrap::Attack_damage = FragTrap::Attack_damage;
+}
 
-
-class ScavTrap : public ClapTrap {
-	public:
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap&);
-		ScavTrap& operator = (const ScavTrap&);
-		void guardGate();
-		~ScavTrap();
-};
-
-#endif 

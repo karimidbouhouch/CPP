@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/04 23:48:17 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/05 21:57:18 by kid-bouh         ###   ########.fr       */
+/*   Created: 2023/01/05 22:52:40 by kid-bouh          #+#    #+#             */
+/*   Updated: 2023/01/06 00:48:07 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#include "FragTrap.hpp"
 
-#include <iostream>
-#include "ClapTrap.hpp"
+int main()
+{
+	FragTrap frag1("hero1");
+	FragTrap frag2("hero2");
+	FragTrap frag3("hero3");
+	frag3 = frag2;
 
-
-class ScavTrap : public ClapTrap {
-	public:
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap&);
-		ScavTrap& operator = (const ScavTrap&);
-		void guardGate();
-		~ScavTrap();
-};
-
-#endif 
+	frag1.attack("enemy");
+	frag1.highFivesGuys();
+	
+	frag3.highFivesGuys();
+}
