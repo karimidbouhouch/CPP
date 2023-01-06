@@ -15,5 +15,13 @@
 int main()
 {
 	DiamondTrap dt("hero");
+	DiamondTrap dt2("hero2");
+	DiamondTrap dt3;
+	dt3 = dt2;
 
+	dt.whoAmI();
+	dt.attack("enemy");
+
+	dt3.whoAmI();
+	dt3.attack("enemy2");
 }

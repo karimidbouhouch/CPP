@@ -16,9 +16,6 @@ all 	: $(NAME) $(INC)
 $(NAME) : $(OBJ)
 		c++ $(FLAGS) $(OBJ) -o $(NAME)
 
-%.o : %.cpp $(INC)
-	c++ $(FLAGS) -o $@ -c $<
-
 clean 	:
 		@rm -f $(OBJ)
 

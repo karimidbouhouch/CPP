@@ -36,9 +36,20 @@ DiamondTrap::~DiamondTrap()
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& obj)
 {
 	std::cout << "DiamondTrap Copy assignment Operator" << std::endl;
+	this->name = obj.name;
+	ClapTrap::name = name + "_clap_name";
 	this->Energy_points = obj.Energy_points;
 	this->Attack_damage = obj.Attack_damage;
 	this->Hit_points = obj.Hit_points;
 	return *this;
 }
 
+void DiamondTrap::whoAmI()
+{
+	std::cout << "I'm " << name << " - " << ClapTrap::name << std::endl;
+}
+
+void DiamondTrap::attack(const std::string& target)
+{
+	ScavTrap::attack(target);
+}
