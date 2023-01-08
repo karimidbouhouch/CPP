@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 23:16:42 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/07 21:01:14 by kid-bouh         ###   ########.fr       */
+/*   Created: 2023/01/07 18:54:05 by kid-bouh          #+#    #+#             */
+/*   Updated: 2023/01/08 18:23:15 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#include "Cat.hpp"
 
-#include "Weapon.hpp"
-
-class HumanB
+Cat::Cat() : Animal()
 {
-	private:
-		std::string		name;
-		Weapon*			weapon;
-	public:
-		HumanB(std::string name);
-		void attack();
-		void setWeapon(Weapon &w);
-};
+    std::cout << "Cat Default Constructor" << std::endl;
+    this->type = "Cat";
+}
 
-#endif
+Cat::~Cat()
+{
+    std::cout << "Cat Destructor" << std::endl;
+}
+
+void Cat::makeSound() const
+{
+    std::cout << "Myaw sound" << std::endl;
+}
+
+std::string Cat::getType( void ) const
+{
+    return this->type;
+}

@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 23:16:42 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/07 21:01:14 by kid-bouh         ###   ########.fr       */
+/*   Created: 2023/01/08 18:22:47 by kid-bouh          #+#    #+#             */
+/*   Updated: 2023/01/08 19:24:12 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-#include "Weapon.hpp"
 
-class HumanB
-{
-	private:
-		std::string		name;
-		Weapon*			weapon;
-	public:
-		HumanB(std::string name);
-		void attack();
-		void setWeapon(Weapon &w);
-};
+
+
 
 #endif

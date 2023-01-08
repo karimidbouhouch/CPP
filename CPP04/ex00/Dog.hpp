@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 23:16:42 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/07 21:01:14 by kid-bouh         ###   ########.fr       */
+/*   Created: 2023/01/07 18:53:55 by kid-bouh          #+#    #+#             */
+/*   Updated: 2023/01/08 18:28:01 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
 
-#include "Weapon.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-class HumanB
+#include "Animal.hpp"
+
+class Dog : public Animal
 {
-	private:
-		std::string		name;
-		Weapon*			weapon;
-	public:
-		HumanB(std::string name);
-		void attack();
-		void setWeapon(Weapon &w);
+    public:
+        Dog();
+        Dog(Dog& obj);
+        Dog& operator=(Dog& dog);
+        ~Dog();
+        void makeSound() const;
+        std::string getType( void ) const;
 };
 
 #endif

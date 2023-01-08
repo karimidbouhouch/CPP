@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 23:16:42 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/07 21:01:14 by kid-bouh         ###   ########.fr       */
+/*   Created: 2023/01/07 18:54:11 by kid-bouh          #+#    #+#             */
+/*   Updated: 2023/01/08 18:32:19 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include "Weapon.hpp"
+#include "Animal.hpp"
 
-class HumanB
+class Cat : public Animal
 {
-	private:
-		std::string		name;
-		Weapon*			weapon;
-	public:
-		HumanB(std::string name);
-		void attack();
-		void setWeapon(Weapon &w);
+    public:
+        Cat();
+        Cat(Cat& cat);
+        Cat& operator=(Cat& cat);
+        ~Cat();
+        void makeSound() const;
+        std::string getType( void ) const;
 };
 
 #endif

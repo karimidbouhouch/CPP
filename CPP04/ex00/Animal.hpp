@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/10 23:16:42 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/07 21:01:14 by kid-bouh         ###   ########.fr       */
+/*   Created: 2023/01/07 18:47:50 by kid-bouh          #+#    #+#             */
+/*   Updated: 2023/01/08 19:18:07 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-#include "Weapon.hpp"
+#include <iostream>
 
-class HumanB
-{
-	private:
-		std::string		name;
-		Weapon*			weapon;
-	public:
-		HumanB(std::string name);
-		void attack();
-		void setWeapon(Weapon &w);
+class Animal {
+    protected:
+        std::string type;
+    public:
+        Animal();
+        Animal(Animal& obj);
+        Animal& operator=(const Animal& animal);
+        virtual ~Animal();
+        virtual void makeSound() const;
+        std::string getType( void ) const;
 };
 
 #endif
