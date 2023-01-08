@@ -7,11 +7,15 @@ CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98
 SRC		= 	Animal.cpp\
 			Cat.cpp\
 			Dog.cpp\
+			WrongAnimal.cpp\
+			WrongCat.cpp\
 			main.cpp
 
 INC		= Animal.hpp\
 		  Cat.hpp\
-		  Dog.hpp
+		  Dog.hpp\
+		  WrongAnimal.hpp\
+		  WrongCat.hpp
 
 OBJ 	= $(SRC:%.cpp=%.o)
 
