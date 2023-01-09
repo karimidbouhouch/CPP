@@ -1,7 +1,5 @@
 NAME 	= Animal
 
-CXX		= c++
-
 CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98 
 
 SRC		= 	Animal.cpp\
@@ -21,7 +19,7 @@ OBJ 	= $(SRC:%.cpp=%.o)
 
 all 	: $(NAME) $(INC)
 
-$(NAME) : $(OBJ)
+$(NAME) : $(OBJ) $(INC)
 		c++ $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 clean 	:

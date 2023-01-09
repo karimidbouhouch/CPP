@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 18:22:47 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/09 00:43:29 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/09 16:32:36 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class WrongCat : public WrongAnimal {
         WrongCat(WrongCat& obj);
         WrongCat& operator=(const WrongCat& obj);
         ~WrongCat();
-        void makeSound() const;
         std::string getType( void ) const;
 };
 

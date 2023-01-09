@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:47:40 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/09 14:20:49 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/09 17:49:13 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Animal::Animal()
 
 Animal::Animal(std::string _type)
 {
-    std::cout << "Animal Parametrized Constructor" << std::endl;
+    std::cout << "Animal Name Constructor" << std::endl;
     this->type = _type;
 }
 

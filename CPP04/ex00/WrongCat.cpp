@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 18:22:14 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/09 00:52:41 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/09 16:32:31 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,25 @@ WrongCat::WrongCat() : WrongAnimal()
     this->type = "WrongCat";
 }
 
+WrongCat::WrongCat(WrongCat& obj)
+{
+    std::cout << "WrongCat Copy Constructor" << std::endl;
+    this->type = obj.type;
+}
+
+WrongCat& WrongCat::operator=(const WrongCat& obj)
+{
+    std::cout << "WrongCat Copy assignment operator" << std::endl;
+    if(this != &obj)
+    {
+        this->type = obj.type;
+    }
+    return *this;
+}
+
 WrongCat::~WrongCat()
 {
     std::cout << "WrongCat Destructor" << std::endl;
-}
-
-void WrongCat::makeSound() const
-{
-    std::cout << "WrongCat Myaw sound" << std::endl;
 }
 
 std::string WrongCat::getType( void ) const

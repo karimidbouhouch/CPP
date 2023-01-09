@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 18:22:36 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/09 00:44:34 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/09 16:34:32 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class WrongAnimal {
         WrongAnimal();
         WrongAnimal(WrongAnimal& obj);
         WrongAnimal& operator=(const WrongAnimal& obj);
-        ~WrongAnimal();
-        void makeSound() const;
+        virtual ~WrongAnimal();
+        virtual void makeSound() const;
         std::string getType( void ) const;
 };
 

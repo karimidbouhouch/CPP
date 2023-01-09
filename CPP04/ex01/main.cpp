@@ -6,42 +6,40 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 18:44:45 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/09 16:35:08 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/09 19:24:50 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+#include "Brain.hpp"
 
 int main()
 {
-    const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
-    
-    std::cout << meta->getType() << " " << std::endl;
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound();
-    j->makeSound();
-    meta->makeSound();
-    
-    delete meta;
+        
     delete j;
     delete i;
 
-    const WrongAnimal* animal = new WrongAnimal();
-    const WrongCat* cat = new WrongCat();
-    
-    std::cout << cat->getType() << " " << std::endl;
-    cat->makeSound();
-    animal->makeSound();
-    
-    delete animal;
-    delete cat;
+    Animal *tab[4];
 
+    tab[0] = new Dog();
+    tab[1] = new Dog();
+    tab[2] = new Cat();
+    tab[3] = new Cat();
+
+    delete tab[0];
+    delete tab[1];
+    delete tab[2];
+    delete tab[3];
+
+    // Brain b;
+    // b.setIdea("Idea 1");
+    // b.setIdea("Idea 2");
+    // std::cout << b.getIdea(0) << std::endl;
+    // std::cout << b.getIdea(1) << std::endl;
+    
     return 0;
 }
