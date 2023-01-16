@@ -6,13 +6,14 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:52:00 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/15 20:17:09 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/16 02:41:16 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include "Form.hpp"
 
 class Bureaucrat 
 {
@@ -29,6 +30,7 @@ class Bureaucrat
         int getGrade();
         void incrGrade();
         void decrGrade();
+        void signForm(class Form &obj);
         
         class GradeTooHighException : public std::exception
         {

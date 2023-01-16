@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:52:06 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/16 00:03:31 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/16 02:19:15 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Bureaucrat::Bureaucrat(){}
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
     std::cout << "Name Constructor" << std::endl;
-    if (grade < 1)
+    if(grade < 1)
         throw GradeTooHighException();
     else if (grade > 150)
         throw GradeTooLowException();
@@ -83,4 +83,12 @@ std::ostream &operator << (std::ostream &out, Bureaucrat &obj)
 {
     out << obj.getName() << ", bureaucrat grade " << obj.getGrade() << std::endl;
     return (out);
+}
+
+void Bureaucrat::signForm(class Form &obj)
+{
+    if (obj.getSign())
+        std::cout << this->_name << " signed " << obj.getName() << "\n";
+    else
+        std::cout << this->_name << " couldn’t sign " << obj.getName() << " because " << obj.getGradesign() << "\n";
 }
