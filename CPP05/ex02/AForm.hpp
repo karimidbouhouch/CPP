@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 21:16:42 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 01:53:01 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/17 04:26:23 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ class AForm
         AForm(const AForm & obj);
         AForm& operator=(const AForm& obj);
         void beSigned(Bureaucrat &obj);
-        int getSign();
-        std::string getName();
-        int getGradesign();
-        int getGradeexec();
+        bool getSign() const;
+        std::string getName() const;
+        int getGradesign() const;
+        int getGradeexec() const;
         virtual void execute(Bureaucrat const & executor) const = 0;
         ~AForm();
         

@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 01:24:51 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 02:13:59 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/17 04:27:05 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & ob
 
 PresidentialPardonForm & PresidentialPardonForm::operator= (const PresidentialPardonForm & obj)
 {
+    (void) obj;
     std::cout << "PresidentialPardonForm Copy assignment operator" << std::endl;
+    return *this;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm()
@@ -46,6 +48,6 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const
         return ;
     }
     if (executor.getGrade() > getGradeexec())
-        throw(Form::GradeTooLowException());
+        throw(AForm::GradeTooLowException());
     std::cout << getName() << " has been pardoned by Zaphod Beeblebrox." << "\n";
 }

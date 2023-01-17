@@ -6,11 +6,12 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:52:06 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 01:45:34 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/17 04:41:20 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(){}
 
@@ -45,12 +46,12 @@ Bureaucrat& Bureaucrat::operator = (const Bureaucrat & obj)
     return *this;
 }
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
     return this->_name;
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return this->_grade;
 }
@@ -91,4 +92,9 @@ void Bureaucrat::signForm(class AForm &obj)
         std::cout << this->_name << " signed " << obj.getName() << "\n";
     else
         std::cout << this->_name << " couldn’t sign " << obj.getName() << " because grade too low " << obj.getGradesign() << "\n";
+}
+
+void Bureaucrat::executeForm(AForm const & obj)
+{
+    obj.execute(*this);
 }

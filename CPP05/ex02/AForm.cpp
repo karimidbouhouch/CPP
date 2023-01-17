@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 21:16:36 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 02:37:43 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/17 04:39:03 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,22 +57,22 @@ void AForm::beSigned(Bureaucrat &obj)
     // else throw (AForm::GradeTooLowException());
 }
 
-int AForm::getSign()
+bool AForm::getSign() const
 {
     return this->_sign;
 }
 
-std::string AForm::getName()
+std::string AForm::getName() const
 {
     return this->_name;
 }
 
-int AForm::getGradesign()
+int AForm::getGradesign() const 
 {
     return this->_grade_sign;
 }
 
-int AForm::getGradeexec()
+int AForm::getGradeexec() const 
 {
     return this->_grade_exec;
 }

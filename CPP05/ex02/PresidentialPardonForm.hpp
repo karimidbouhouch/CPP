@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 01:24:56 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 02:00:40 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/17 04:19:02 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,4 @@ class PresidentialPardonForm : public AForm{
         PresidentialPardonForm & operator= (const PresidentialPardonForm & obj);
         ~PresidentialPardonForm();
         void execute(Bureaucrat const & executor) const;
-}
+};
