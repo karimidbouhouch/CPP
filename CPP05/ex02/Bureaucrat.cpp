@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:52:06 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 01:08:33 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/17 01:45:34 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ std::ostream &operator << (std::ostream &out, Bureaucrat &obj)
     return (out);
 }
 
-void Bureaucrat::signForm(class Form &obj)
+void Bureaucrat::signForm(class AForm &obj)
 {
     if (obj.getSign())
         std::cout << this->_name << " signed " << obj.getName() << "\n";

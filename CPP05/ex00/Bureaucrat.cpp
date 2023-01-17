@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:52:06 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/16 00:03:31 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/17 01:08:45 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,16 @@ int Bureaucrat::getGrade()
 
 void Bureaucrat::incrGrade()
 {
-    if (_grade + 1 > 150)
-        throw GradeTooLowException();
-    this->_grade++;
+    if(_grade - 1 < 1)
+        throw GradeTooHighException();
+    this->_grade--;
 }
 
 void Bureaucrat::decrGrade()
 {
-    if (_grade - 1 < 1)
-        throw GradeTooHighException();
-    this->_grade--;
+    if (_grade + 1 > 150)
+        throw GradeTooLowException();
+    this->_grade++;
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw()

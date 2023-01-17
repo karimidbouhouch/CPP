@@ -1,83 +1,83 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.cpp                                           :+:      :+:    :+:   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 21:16:36 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 01:02:05 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/17 02:37:43 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(const std::string name,  const int grade_sign, const int grade_exec) : _name(name), _sign(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
+AForm::AForm(const std::string name,  const int grade_sign, const int grade_exec) : _name(name), _sign(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
 {
-    std::cout << "-Form Name Constructor" << std::endl;
+    std::cout << "-AForm Name Constructor" << std::endl;
     if (grade_sign < 1)
         throw GradeTooHighException();
     else if (grade_sign > 150)
         throw GradeTooLowException();
 }
 
-Form::Form() :  _sign(false), _grade_sign(0), _grade_exec(0)
+AForm::AForm() :  _sign(false), _grade_sign(0), _grade_exec(0)
 {
-    std::cout << "-Form Default Constructor" << std::endl;
+    std::cout << "-AForm Default Constructor" << std::endl;
 }
 
-Form::Form(const Form & obj) : _name(obj._name), _sign(obj._sign), _grade_sign(obj._grade_sign), _grade_exec(obj._grade_exec)
+AForm::AForm(const AForm & obj) : _name(obj._name), _sign(obj._sign), _grade_sign(obj._grade_sign), _grade_exec(obj._grade_exec)
 {
-    std::cout << "-Form Copy Constructor" << std::endl;
+    std::cout << "-AForm Copy Constructor" << std::endl;
 }
 
-Form& Form::operator=(const Form& obj)
+AForm& AForm::operator=(const AForm& obj)
 {
-    std::cout << "-Form Copy assignment operator" << std::endl;
+    std::cout << "-AForm Copy assignment operator" << std::endl;
     if (this != &obj)
         this->_sign = obj._sign;
     return *this;
 }
 
-const char * Form::GradeTooHighException::what() const throw()
+const char * AForm::GradeTooHighException::what() const throw()
 {
     return "Grade too high";
 }
 
-const char * Form::GradeTooLowException::what() const throw()
+const char * AForm::GradeTooLowException::what() const throw()
 {
     return "Grade too low";
 }
 
-void Form::beSigned(Bureaucrat &obj)
+void AForm::beSigned(Bureaucrat &obj)
 {
     if (_grade_sign >= obj.getGrade())
         this->_sign = true;
-    // else throw (Form::GradeTooLowException());
+    // else throw (AForm::GradeTooLowException());
 }
 
-int Form::getSign()
+int AForm::getSign()
 {
     return this->_sign;
 }
 
-std::string Form::getName()
+std::string AForm::getName()
 {
     return this->_name;
 }
 
-int Form::getGradesign()
+int AForm::getGradesign()
 {
     return this->_grade_sign;
 }
 
-int Form::getGradeexec()
+int AForm::getGradeexec()
 {
     return this->_grade_exec;
 }
 
-Form::~Form()
+AForm::~AForm()
 {
-    std::cout << "-Form Destructor" << std::endl;
+    std::cout << "-AForm Destructor" << std::endl;
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 21:16:42 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 00:40:09 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/17 01:53:01 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
     private:
         const std::string _name;
@@ -25,16 +25,17 @@ class Form
         const int _grade_sign;
         const int _grade_exec;
     public:
-        Form();
-        Form(const std::string name, const int grade_sign, const int grade_exec);
-        Form(const Form & obj);
-        Form& operator=(const Form& obj);
+        AForm();
+        AForm(const std::string name, const int grade_sign, const int grade_exec);
+        AForm(const AForm & obj);
+        AForm& operator=(const AForm& obj);
         void beSigned(Bureaucrat &obj);
         int getSign();
         std::string getName();
         int getGradesign();
         int getGradeexec();
-        ~Form();
+        virtual void execute(Bureaucrat const & executor) const = 0;
+        ~AForm();
         
     class GradeTooHighException : public std::exception
     {

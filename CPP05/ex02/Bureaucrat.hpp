@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:52:00 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 00:47:35 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/17 01:59:29 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 #include <iostream>
 #include "Form.hpp"
-class Form;
+
+class AForm;
 
 class Bureaucrat 
 {
@@ -31,7 +32,7 @@ class Bureaucrat
         int getGrade();
         void incrGrade();
         void decrGrade();
-        void signForm(Form &obj);
+        void signForm(AForm &obj);
         
         class GradeTooHighException : public std::exception
         {
