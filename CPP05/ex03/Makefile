@@ -7,12 +7,14 @@ SRC		= 	Bureaucrat.cpp\
 			PresidentialPardonForm.cpp\
 			RobotomyRequestForm.cpp\
 			ShrubberyCreationForm.cpp\
+			Intern.cpp\
 			main.cpp
 
 INC		= 	Bureaucrat.hpp\
 			AForm.hpp\
 			PresidentialPardonForm.hpp\
 			RobotomyRequestForm.hpp\
+			Intern.hpp\
 			ShrubberyCreationForm.hpp
 
 OBJ 	= $(SRC:%.cpp=%.o)

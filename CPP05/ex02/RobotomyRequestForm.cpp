@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 01:24:34 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 05:14:24 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/18 03:02:34 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm & obj) : AFor
 
 RobotomyRequestForm & RobotomyRequestForm::operator= (const RobotomyRequestForm & obj)
 {
-    (void) obj;
+    this->AForm::operator=(obj);
     std::cout << "-RobotomyRequestForm Copy assignment operator" << std::endl;
     return *this;
 }

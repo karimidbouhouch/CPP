@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 01:24:51 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 05:14:15 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/18 03:02:29 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm & ob
 
 PresidentialPardonForm & PresidentialPardonForm::operator= (const PresidentialPardonForm & obj)
 {
-    (void) obj;
+    this->AForm::operator=(obj);
     std::cout << "-PresidentialPardonForm Copy assignment operator" << std::endl;
     return *this;
 }

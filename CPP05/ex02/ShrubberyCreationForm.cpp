@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 01:24:10 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 05:35:41 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/18 03:02:40 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & obj) 
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator= (const ShrubberyCreationForm & obj)
 {
-    (void) obj;
+    this->AForm::operator=(obj);
     std::cout << "-ShrubberyCreationForm Copy assignment operator" << std::endl;
     return *this;
 }
