@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:52:00 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 04:41:27 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/18 04:19:19 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,4 @@ class Bureaucrat
 };
 
 
-std::ostream &operator << (std::ostream &out, Bureaucrat &obj);
+std::ostream &operator << (std::ostream &out, const Bureaucrat &obj);

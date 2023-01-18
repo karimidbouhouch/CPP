@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 21:16:42 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 00:40:09 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/18 04:43:17 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ class Form
         Form(const Form & obj);
         Form& operator=(const Form& obj);
         void beSigned(Bureaucrat &obj);
-        int getSign();
-        std::string getName();
-        int getGradesign();
-        int getGradeexec();
+        int getSign() const; 
+        std::string getName() const;
+        int getGradesign() const;
+        int getGradeexec() const;
         ~Form();
         
     class GradeTooHighException : public std::exception
@@ -47,3 +47,5 @@ class Form
             const char * what() const throw();
     };
 };
+
+std::ostream &operator << (std::ostream &out, const Form &obj);

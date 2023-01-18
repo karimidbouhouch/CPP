@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 21:16:36 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 04:24:23 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/18 04:42:51 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 Form::Form(const std::string name,  const int grade_sign, const int grade_exec) : _name(name), _sign(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
 {
     std::cout << "-Form Name Constructor" << std::endl;
-    if (grade_sign < 1)
+    if (grade_sign < 1 || grade_exec < 1)
         throw GradeTooHighException();
-    else if (grade_sign > 150)
+    else if (grade_sign > 150 || grade_exec > 150)
         throw GradeTooLowException();
 }
 
@@ -54,25 +54,25 @@ void Form::beSigned(Bureaucrat &obj)
 {
     if (_grade_sign >= obj.getGrade())
         this->_sign = true;
-    // else throw (Form::GradeTooLowException());
+    else throw (Form::GradeTooLowException());
 }
 
-int Form::getSign()
+int Form::getSign() const 
 {
     return this->_sign;
 }
 
-std::string Form::getName()
+std::string Form::getName() const 
 {
     return this->_name;
 }
 
-int Form::getGradesign()
+int Form::getGradesign() const 
 {
     return this->_grade_sign;
 }
 
-int Form::getGradeexec()
+int Form::getGradeexec() const 
 {
     return this->_grade_exec;
 }
@@ -80,4 +80,10 @@ int Form::getGradeexec()
 Form::~Form()
 {
     std::cout << "-Form Destructor" << std::endl;
+}
+
+std::ostream &operator << (std::ostream &out, const Form &obj)
+{
+    out << "Form Name : " << obj.getName() << "; Form sign : " << obj.getSign() << "; Form Grade exec : " << obj.getGradeexec() << "; Form Grade sign : " << obj.getGradesign() << std::endl;
+    return (out);
 }

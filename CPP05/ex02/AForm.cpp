@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 21:16:36 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 04:39:03 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/18 04:45:13 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 AForm::AForm(const std::string name,  const int grade_sign, const int grade_exec) : _name(name), _sign(false), _grade_sign(grade_sign), _grade_exec(grade_exec)
 {
     std::cout << "-AForm Name Constructor" << std::endl;
-    if (grade_sign < 1)
+    if (grade_sign < 1 || grade_exec < 1)
         throw GradeTooHighException();
-    else if (grade_sign > 150)
+    else if (grade_sign > 150 || grade_exec > 150)
         throw GradeTooLowException();
 }
 
@@ -54,7 +54,7 @@ void AForm::beSigned(Bureaucrat &obj)
 {
     if (_grade_sign >= obj.getGrade())
         this->_sign = true;
-    // else throw (AForm::GradeTooLowException());
+    else throw (AForm::GradeTooLowException());
 }
 
 bool AForm::getSign() const
@@ -80,4 +80,10 @@ int AForm::getGradeexec() const
 AForm::~AForm()
 {
     std::cout << "-AForm Destructor" << std::endl;
+}
+
+std::ostream &operator << (std::ostream &out, const AForm &obj)
+{
+    out << "Form Name : " << obj.getName() << "; Form sign : " << obj.getSign() << "; Form Grade exec : " << obj.getGradeexec() << "; Form Grade sign : " << obj.getGradesign() << std::endl;
+    return (out);
 }

@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 21:16:42 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 05:10:58 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/18 04:45:48 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,3 +48,6 @@ class AForm
             const char * what() const throw();
     };
 };
+
+
+std::ostream &operator << (std::ostream &out, const AForm &obj);

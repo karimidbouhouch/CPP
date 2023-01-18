@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 18:52:06 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/17 01:08:45 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/18 04:21:35 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ Bureaucrat& Bureaucrat::operator = (Bureaucrat & obj)
     return *this;
 }
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
     return this->_name;
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
     return this->_grade;
 }
@@ -79,7 +79,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
     return "Grade too low";
 }
 
-std::ostream &operator << (std::ostream &out, Bureaucrat &obj)
+std::ostream &operator << (std::ostream &out, const Bureaucrat &obj)
 {
     out << obj.getName() << ", bureaucrat grade " << obj.getGrade() << std::endl;
     return (out);
