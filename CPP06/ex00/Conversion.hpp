@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 01:40:30 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/20 02:10:54 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/21 01:13:15 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 
 
 class Conversion{
-    // private :
-    //     std::string value;
     public :
         Conversion();
         ~Conversion();
@@ -31,6 +29,7 @@ class Conversion{
         void toFloat(std::string str);
         void toChar(std::string str);
         void toDouble(std::string str);
+        void charTo(std::string str);
 };
 
 #endif

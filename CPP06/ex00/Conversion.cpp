@@ -6,45 +6,66 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 01:40:35 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/20 02:51:21 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/21 01:48:32 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Conversion.hpp"
+#include <iomanip>
+#include <cstring>
+#include <cctype>
+
 
 Conversion::Conversion(){}
 
 Conversion::~Conversion(){}
 
-Conversion::Conversion(std::string value)
+int ft_strlen(std::string str)
 {
-    std::stringstream ss;
-    
-    
-    toChar(value);
-    toInt(value);
-    toFloat(value);
-    toDouble(value);
+    int i = 0;
+    while (str[i])
+        i++;
+    return i;
 }
 
-bool IsDigitString(const std::string& str) {
-  return std::all_of(str.begin(), str.end(), ::isdigit);
+void Conversion::charTo(std::string value)
+{
+    std::cout << "char: " << static_cast<char>(value[0]) << std::endl;
+    std::cout << "int: " << static_cast<int>(value[0]) << std::endl;
+    std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(value[0]) << "f" << std::endl;
+    std::cout << "double: " << static_cast<double>(value[0]) << std::endl;
+}
+
+Conversion::Conversion(std::string value)
+{
+    if (ft_strlen(value) == 1 && isalpha(value[0]))
+    {
+        charTo(value);
+    }
+    else
+    {
+        toChar(value);
+        toInt(value);
+        toFloat(value);
+        toDouble(value);
+    }
 }
 
 void Conversion::toChar(std::string value)
 {
-
-    std::stringstream ss;
-    int i = 0;
-
-    ss << value;
-    ss >> i;
     try
 	{
-		if (isprint(i) == true)
-			std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
-		else
-			std::cout << "char: Non displayable" << std::endl;
+        int i = 0;
+        i = std::stof(value);
+        if(i > INT32_MIN)
+        {
+            if (isprint(i) == true)
+                std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
+            else
+                std::cout << "char: Non displayable" << std::endl;
+        }
+        else 
+		    std::cout << "char: impossible" << std::endl;
 	}
 	catch(...)
 	{
@@ -52,45 +73,47 @@ void Conversion::toChar(std::string value)
 	}
 }
 
-
-void Conversion::toDouble(std::string value)
+void Conversion::toInt(std::string value)
 {
-    (void) value;
-    std::cerr << "double: " << '\n';
+    try
+    {
+        int i = 0;
+        i = std::stof(value);
+        if (i > INT32_MIN)
+            std::cout << "int: " << static_cast<int>(i) << '\n';
+        else
+            std::cout << "int: impossible" << '\n';
+    }
+    catch(std::exception &e)
+    {
+        std::cerr << "int: impossible" << '\n';
+    }
 }
 
 void Conversion::toFloat(std::string value)
 {
     try
     {
-        std::stringstream ss;
         float i = 0;
-
-        // if(IsDigitString(value)) throw std::invalid_argument("int: impossible");
-
-        ss << value;
-        ss >> i;
-        std::cout << "float: " << static_cast<float>(i) << '\n';
+        i = std::stof(value);
+        std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(i) << "f" << '\n';
     }
-    catch(std::exception &e)
+    catch(...)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << "float: nanf" << '\n';
     }
 }
 
-void Conversion::toInt(std::string value)
+void Conversion::toDouble(std::string value)
 {
     try
     {
-        std::stringstream ss;
-        int i = 0;
-
-        ss << value;
-        ss >> i;
-        std::cout << "int: " << static_cast<int>(i) << '\n';
+        double i = 0;
+        i = std::stof(value);
+        std::cout << "double: " << static_cast<double>(i) << '\n';
     }
-    catch(std::exception &e)
+    catch(...)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << "double: nan" << '\n';
     }
 }
