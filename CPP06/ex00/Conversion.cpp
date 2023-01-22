@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 01:40:35 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/21 23:28:20 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/22 22:37:07 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,6 @@ void Conversion::toInt(std::string value)
 {
     try
     {
-        // size_t found = value.find("nan");
-        // if (found == std::string::npos && isDigitString(value))
         if (isDigitString(value))
         {
             int i = 0;

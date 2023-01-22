@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 01:40:30 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/21 01:13:15 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/22 22:42:47 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ class Conversion{
         Conversion();
         ~Conversion();
         Conversion(std::string str);
-        // Conversion(Conversion &obj);
-        // Conversion & operator = (Conversion & obj);
         void toInt(std::string str);
         void toFloat(std::string str);
         void toChar(std::string str);

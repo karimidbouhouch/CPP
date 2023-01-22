@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/20 00:10:18 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/22 22:49:57 by kid-bouh         ###   ########.fr       */
+/*   Created: 2023/01/22 19:18:43 by kid-bouh          #+#    #+#             */
+/*   Updated: 2023/01/22 19:56:09 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Conversion.hpp"
-
-int main(int ac, char **av)
+class C : public Base 
 {
-    if (ac == 2)
-    {
-        Conversion c(av[1]);
-    }
-    else 
-    {
-        std::cout << "Wrong args !\n";
-    }
-    return 0;
-}
+    
+};

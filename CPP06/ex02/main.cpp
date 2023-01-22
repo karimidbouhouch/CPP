@@ -6,23 +6,16 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 01:40:37 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/22 02:24:47 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/22 21:51:43 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstdlib>
-
-class Base {
-public:
-    virtual ~Base();
-};
-
-Base::~Base(){}
-
-class A : public Base {};
-class B : public Base {};
-class C : public Base {};
+#include <cstdlib>  
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
 Base* generate() {
     int random = std::rand() % 3;
@@ -39,12 +32,15 @@ Base* generate() {
 }
 
 void identify(Base* p) {
-    if (dynamic_cast<A*>(p)) {
-        std::cout << "A" << std::endl;
-    } else if (dynamic_cast<B*>(p)) {
-        std::cout << "B" << std::endl;
-    } else if (dynamic_cast<C*>(p)) {
-        std::cout << "C" << std::endl;
+    Base *a = dynamic_cast<A*>(p);
+    Base *b = dynamic_cast<B*>(p);
+    Base *c = dynamic_cast<C*>(p);
+    if (a) {
+        std::cout << a << " - Class : A" << std::endl;
+    } else if (b) {
+        std::cout << b << " - Class : B" << std::endl;
+    } else if (c) {
+        std::cout << c << " - Class : C" << std::endl;
     } else {
         std::cout << "Unknown" << std::endl;
     }
@@ -52,16 +48,16 @@ void identify(Base* p) {
 
 void identify(Base& p) {
     try {
-        dynamic_cast<A&>(p);
-        std::cout << "A" << std::endl;
+        Base &a = dynamic_cast<A&>(p);
+        std::cout << &a << " - Class : A" << std::endl;
     } catch (std::bad_cast&) {
         try {
-            dynamic_cast<B&>(p);
-            std::cout << "B" << std::endl;
+            Base &b = dynamic_cast<B&>(p);
+            std::cout << &b << " - Class : B" << std::endl;
         } catch (std::bad_cast&) {
             try {
-                dynamic_cast<C&>(p);
-                std::cout << "C" << std::endl;
+                Base &c = dynamic_cast<C&>(p);
+                std::cout << &c << " - Class : C" << std::endl;
             } catch (std::bad_cast&) {
                 std::cout << "Unknown" << std::endl;
             }
@@ -70,7 +66,7 @@ void identify(Base& p) {
 }
 
 int main() {
-    std::srand(time(nullptr));
+    std::srand(time(NULL));    
     Base* p = generate();
     identify(p);
     identify(*p);
