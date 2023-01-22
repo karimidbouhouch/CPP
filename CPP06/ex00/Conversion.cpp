@@ -6,26 +6,28 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 01:40:35 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/21 01:48:32 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/21 23:28:20 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Conversion.hpp"
 #include <iomanip>
-#include <cstring>
-#include <cctype>
-
 
 Conversion::Conversion(){}
 
 Conversion::~Conversion(){}
 
-int ft_strlen(std::string str)
+bool isDigitString(std::string str) 
 {
-    int i = 0;
-    while (str[i])
-        i++;
-    return i;
+    for (std::string::size_type i = 0; i < str.length(); i++) {
+        if (!((str[i] >= '0' && str[i] <= '9') || str[i] == '.' || str[0] == '-')) 
+        {
+            if (i == str.length() - 1 && str[i] == 'f')
+                return true;
+            return false;
+        }
+    }
+    return true;
 }
 
 void Conversion::charTo(std::string value)
@@ -38,7 +40,7 @@ void Conversion::charTo(std::string value)
 
 Conversion::Conversion(std::string value)
 {
-    if (ft_strlen(value) == 1 && isalpha(value[0]))
+    if (value.length() == 1 && isprint(value[0]) && !(value[0] >= '0' && value[0] <= '9'))
     {
         charTo(value);
     }
@@ -55,21 +57,23 @@ void Conversion::toChar(std::string value)
 {
     try
 	{
-        int i = 0;
-        i = std::stof(value);
-        if(i > INT32_MIN)
+        if (isDigitString(value))
         {
+            int i = 0;
+            i = std::stof(value);
             if (isprint(i) == true)
                 std::cout << "char: '" << static_cast<char>(i) << "'" << std::endl;
             else
                 std::cout << "char: Non displayable" << std::endl;
         }
         else 
-		    std::cout << "char: impossible" << std::endl;
+        {
+            std::cout << "char: impossible" << '\n';
+        }
 	}
 	catch(...)
 	{
-		std::cerr << "char: impossible" << std::endl;
+		std::cout << "char: impossible" << std::endl;
 	}
 }
 
@@ -77,16 +81,22 @@ void Conversion::toInt(std::string value)
 {
     try
     {
-        int i = 0;
-        i = std::stof(value);
-        if (i > INT32_MIN)
-            std::cout << "int: " << static_cast<int>(i) << '\n';
-        else
+        // size_t found = value.find("nan");
+        // if (found == std::string::npos && isDigitString(value))
+        if (isDigitString(value))
+        {
+            int i = 0;
+            i = std::stoi(value);
+            std::cout << "int: " << static_cast<int>(i) <<'\n';
+        }
+        else 
+        {
             std::cout << "int: impossible" << '\n';
+        }
     }
     catch(std::exception &e)
     {
-        std::cerr << "int: impossible" << '\n';
+        std::cout << "int: impossible" << '\n';
     }
 }
 
@@ -94,13 +104,20 @@ void Conversion::toFloat(std::string value)
 {
     try
     {
-        float i = 0;
-        i = std::stof(value);
-        std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(i) << "f" << '\n';
+        if (isDigitString(value) || (value == "-inff" || value == "-inf" || value == "+inf" || value == "+inff"))
+        {
+            float i = 0;
+            i = std::stof(value);            
+            std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(i) << "f" << '\n';
+        }
+        else 
+        {
+            std::cout << "float: nanf" << '\n';
+        }
     }
     catch(...)
     {
-        std::cerr << "float: nanf" << '\n';
+        std::cout << "float: nanf" << '\n';
     }
 }
 
@@ -108,12 +125,19 @@ void Conversion::toDouble(std::string value)
 {
     try
     {
-        double i = 0;
-        i = std::stof(value);
-        std::cout << "double: " << static_cast<double>(i) << '\n';
+        if (isDigitString(value) || (value == "-inff" || value == "-inf" || value == "+inf" || value == "+inff"))
+        {
+            double i = 0;
+            i = std::stof(value);
+            std::cout << "double: " << static_cast<double>(i) << '\n';
+        }
+        else 
+        {
+            std::cout << "double: nan" << '\n';
+        }
     }
     catch(...)
     {
-        std::cerr << "double: nan" << '\n';
+        std::cout << "double: nan" << '\n';
     }
 }
