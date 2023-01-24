@@ -6,7 +6,7 @@
 /*   By: kid-bouh <kid-bouh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 01:40:37 by kid-bouh          #+#    #+#             */
-/*   Updated: 2023/01/22 21:51:43 by kid-bouh         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:15:05 by kid-bouh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void identify(Base& p) {
 }
 
 int main() {
-    std::srand(time(NULL));    
+    std::srand(time(NULL));
     Base* p = generate();
     identify(p);
     identify(*p);

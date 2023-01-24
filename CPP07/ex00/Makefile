@@ -1,0 +1,25 @@
+NAME 	= whatever
+
+CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98
+
+SRC		= 	main.cpp
+
+INC		= 	whatever.hpp
+
+OBJ 	= $(SRC:%.cpp=%.o)
+
+all 	: $(NAME) $(INC)
+
+$(NAME) : $(OBJ) $(INC)
+		c++ $(CXXFLAGS) $(OBJ) -o $(NAME)
+
+%.o:%.cpp $(INC)
+		c++ $(CXXFLAGS) -c $< -o $@
+
+clean 	:
+		@rm -f $(OBJ)
+
+fclean 	: clean
+		@rm -f $(NAME)
+
+re		: fclean all
