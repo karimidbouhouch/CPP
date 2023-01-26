@@ -68,7 +68,11 @@
 		"*.tcc": "cpp",
 		"clocale": "cpp",
 		"compare": "cpp",
-		"concepts": "cpp"
+		"concepts": "cpp",
+		"__tree": "cpp",
+		"list": "cpp",
+		"map": "cpp",
+		"__cxx_version": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "Disabled"
 }

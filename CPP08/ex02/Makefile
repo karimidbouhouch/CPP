@@ -1,10 +1,10 @@
-NAME 	= Span
+NAME 	= MutantStack
 
-CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CXXFLAGS 	= -Wall -Wextra -Werror -std=c++98
 
 SRC		= 	main.cpp
 
-INC		= 	Span.hpp
+INC		= 	MutantStack.hpp
 
 OBJ 	= $(SRC:%.cpp=%.o)
 
